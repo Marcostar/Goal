@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/onBoardingFragment">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.sagycorp.myutd.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_squad"
+        android:name="com.sagycorp.myutd.ui.sqaud.SquadFragment"
+        android:label="@string/title_squad"
+        tools:layout="@layout/fragment_squad" />
+
+    <fragment
+        android:id="@+id/navigation_info"
+        android:name="com.sagycorp.myutd.ui.clubinfo.ClubInformationFragment"
+        android:label="@string/title_info"
+        tools:layout="@layout/fragment_clubinformation" >
+        <action
+            android:id="@+id/action_navigation_info_to_favTeamFragment"
+            app:destination="@id/favTeamFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.sagycorp.myutd.ui.onboarding.OnBoardingFragment"
+        android:label="OnBoarding"
+        tools:layout="@layout/fragment_onboarding">
+        <action
+            android:id="@+id/action_onBoardingFragment_to_favTeamFragment"
+            app:destination="@id/favTeamFragment"
+            app:popUpTo="@id/onBoardingFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_onBoardingFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/favTeamFragment"
+        android:name="com.sagycorp.myutd.ui.searchteam.FavTeamFragment"
+        android:label="team_item_list"
+        tools:layout="@layout/fragment_favteam" >
+        <action
+            android:id="@+id/action_favTeamFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true" />
+    </fragment>
+</navigation>

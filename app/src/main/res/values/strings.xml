@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Goal</string>
+    <string name="title_home">Home</string>
+    <string name="title_squad">Squad</string>
+    <string name="title_info">Info</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_team">Oops..\nNo Team Found</string>
+    <string name="change_team">Change Team</string>
+</resources>
