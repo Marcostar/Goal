@@ -1,4 +1,4 @@
-package com.sagycorp.myutd.utils
+package com.sagycorp.myutd.ui
 
 import android.view.View
 import androidx.fragment.app.Fragment

@@ -5,19 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.sagycorp.myutd.R
 import com.sagycorp.myutd.databinding.FragmentClubinformationBinding
-import com.sagycorp.myutd.databinding.FragmentOnboardingBinding
-import com.sagycorp.myutd.ui.onboarding.OnBoardingFragmentDirections
-import com.sagycorp.myutd.ui.onboarding.OnBoardingViewModel
-import com.sagycorp.myutd.ui.searchteam.FavTeamFragmentDirections
-import com.sagycorp.myutd.utils.BaseFragment
+import com.sagycorp.myutd.ui.BaseFragment
 
 class ClubInformationFragment : BaseFragment() {
 
@@ -25,7 +20,7 @@ class ClubInformationFragment : BaseFragment() {
         val activity = requireNotNull(this.activity) {
             "You can only access the viewModel after onActivityCreated()"
         }
-        ViewModelProviders.of(this, ClubInformationViewModel.Factory(activity.application))
+        ViewModelProvider(this, ClubInformationViewModel.Factory(activity.application))
             .get(ClubInformationViewModel::class.java)
     }
 
